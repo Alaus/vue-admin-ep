@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
 defineProps<{ msg: string }>()
 
 const count = ref(0)
@@ -19,9 +17,7 @@ const count = ref(0)
 
   <p>
     Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
+    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank">create-vue</a>, the official Vue + Vite starter
   </p>
   <p>
     Install
@@ -29,6 +25,13 @@ const count = ref(0)
     in your IDE for a better DX
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+
+  <div>
+    <el-button type="success"><i-ep-SuccessFilled />Success</el-button>
+    <el-button type="info"><i-ep-InfoFilled />Info</el-button>
+    <el-button type="warning"><i-ep-WarningFilled />Warning</el-button>
+    <el-button type="danger"><i-ep-WarnTriangleFilled />Danger</el-button>
+  </div>
 </template>
 
 <style scoped>
