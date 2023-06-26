@@ -6,6 +6,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import UnoCSS from 'unocss/vite'
 
 import path from 'path'
 const pathSrc = path.resolve(__dirname, 'src')
@@ -56,6 +57,7 @@ export default defineConfig({
       // 指定symbolId格式
       symbolId: 'icon-[dir]-[name]',
     }),
+    UnoCSS({ /* options */ }),
   ],
   css: {
     // CSS 预处理器
