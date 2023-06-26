@@ -1,4 +1,9 @@
 <script setup lang="ts">
+// TypeScript 使用 SCSS 全局变量
+import variables from '@/styles/variables.module.scss'
+
+console.log(variables.bgColor)
+
 defineProps<{ msg: string }>()
 
 const count = ref(0)
@@ -6,6 +11,7 @@ const count = ref(0)
 
 <template>
   <h1>{{ msg }}</h1>
+  <div class="box" />
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
@@ -35,8 +41,13 @@ const count = ref(0)
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .read-the-docs {
   color: #888;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: $bg-color;
 }
 </style>
