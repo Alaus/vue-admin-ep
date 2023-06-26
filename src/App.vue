@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue'
+
+import { useCounterStore } from '@/store/counter'
+const counterStore = useCounterStore()
+
+const numPlus = ref(0)
 </script>
 
 <template>
@@ -10,8 +15,11 @@ import HelloWorld from '@/components/HelloWorld.vue'
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <h1 class="text-3xl">vue-admin-ep-父组件</h1>
+    <el-button type="primary" @click="counterStore.increment(3)" style="margin-right: 20px">count+3</el-button>
+    <el-input-number v-model="numPlus" @change="counterStore.increment(numPlus)"></el-input-number>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld />
 </template>
 
 <style scoped>
