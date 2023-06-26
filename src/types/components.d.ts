@@ -13,5 +13,6 @@ declare module 'vue' {
     IEpSuccessFilled: typeof import('~icons/ep/success-filled')['default']
     IEpWarningFilled: typeof import('~icons/ep/warning-filled')['default']
     IEpWarnTriangleFilled: typeof import('~icons/ep/warn-triangle-filled')['default']
+    SvgIcon: typeof import('./../components/svgIcon/index.vue')['default']
   }
 }
