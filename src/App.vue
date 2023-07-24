@@ -5,6 +5,8 @@ import { useCounterStore } from '@/store/counter'
 const counterStore = useCounterStore()
 
 const numPlus = ref(0)
+
+const appTitle = ref(import.meta.env.VITE_APP_TITLE)
 </script>
 
 <template>
@@ -16,8 +18,10 @@ const numPlus = ref(0)
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
     <h1 class="text-3xl">vue-admin-ep-父组件</h1>
+    <h1 class="text-3xl">{{ appTitle }}</h1>
     <el-button type="primary" @click="counterStore.increment(3)" style="margin-right: 20px">count+3</el-button>
-    <el-input-number v-model="numPlus" @change="counterStore.increment(numPlus)"></el-input-number>
+    <el-button type="primary" @click="counterStore.increment(numPlus)" style="margin-right: 20px">count+numPlus</el-button>
+    <el-input-number v-model="numPlus"></el-input-number>
   </div>
   <HelloWorld />
 </template>
