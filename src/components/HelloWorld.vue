@@ -3,6 +3,9 @@
 import variables from '@/styles/variables.module.scss'
 
 import { useCounterStore } from '@/store/counter'
+
+import { useUserStoreHook } from '@/store/modules/user'
+
 const counterStore = useCounterStore()
 
 console.log(variables.bgColor)
@@ -10,10 +13,23 @@ console.log(variables.bgColor)
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+
+const userStore = useUserStoreHook()
+
+function onLogin() {
+  let params = {
+    username: 'admin',
+    password: '123456'
+  }
+  const res = userStore.login(params)
+  console.log('res', res)
+}
 </script>
 
 <template>
   <div class="box" />
+
+  <div style="width: 300px; word-wrap: break-word; text-align: left">token: {{ userStore.token }}</div>
 
   <el-card class="text-left text-white border-white border-1 border-solid mt-10 bg-[#242424]">
     <template #header> 子组件 HelloWorld.vue</template>
@@ -29,6 +45,7 @@ const count = ref(0)
     <el-button type="warning"><i-ep-WarningFilled />Warning</el-button>
     <el-button type="danger"><i-ep-WarnTriangleFilled />Danger</el-button>
     <el-button type="info"><svg-icon icon-class="guitar" />SVG 本地图标</el-button>
+    <el-button type="success" icon="el-icon-user" @click="onLogin">登录</el-button>
   </div>
 </template>
 
@@ -42,3 +59,4 @@ const count = ref(0)
   background-color: $bg-color;
 }
 </style>
+@/api/auth/login
