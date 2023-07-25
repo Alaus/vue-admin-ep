@@ -8,9 +8,8 @@
     </a>
 </p>
 <p align="center">
- <a target="_blank" href="https://juejin.cn/post/7228990409909108793">vue3-element-admin官方文档</a> |  <a target="_blank" href="http://vue3.youlai.tech">在线预览</a> 
+ <a target="_blank" href="https://juejin.cn/post/7228990409909108793">vue3-element-admin官方文档</a> |  <a target="_blank" href="http://vue3.youlai.tech">在线预览</a>
 </p>
-
 
 ## 项目介绍
 
@@ -34,8 +33,6 @@
 - **接口文档**
 
   ![接口文档](https://foruda.gitee.com/images/1687755822857820115/96054330_716974.png)
- 
-
 
 - **权限管理系统**
 
@@ -56,8 +53,7 @@
 | -------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
 | **开发工具**         | VSCode                                                       | [下载地址](https://code.visualstudio.com/Download)           |
 | **运行环境**         | Node 16+                                                     | [下载地址](http://nodejs.cn/download)                        |
-| **VSCode插件(必装)** | 1. `Vue Language Features (Volar) ` <br/> 2. `TypeScript Vue Plugin (Volar) `  <br/>3. 禁用 Vetur | ![vscode-plugin](https://foruda.gitee.com/images/1687755823108948048/d0198b2d_716974.png) |
-
+| **VSCode插件(必装)** | 1. `Vue Language Features (Volar)` <br/> 2. `TypeScript Vue Plugin (Volar)`  <br/>3. 禁用 Vetur | ![vscode-plugin](https://foruda.gitee.com/images/1687755823108948048/d0198b2d_716974.png) |
 
 ## 项目启动
 
@@ -89,20 +85,18 @@ pnpm run build:prod
 
 # nginx.cofig 配置
 server {
-	listen     80;
-	server_name  localhost;
-	location / {
-			root /usr/share/nginx/html;
-			index index.html index.htm;
-	}
-	# 反向代理配置
-	location /prod-api/ {
-			proxy_pass http://vapi.youlai.tech/; # vapi.youlai.tech替换成你的后端API地址
-	}
+ listen     80;
+ server_name  localhost;
+ location / {
+   root /usr/share/nginx/html;
+   index index.html index.htm;
+ }
+ # 反向代理配置
+ location /prod-api/ {
+   proxy_pass http://vapi.youlai.tech/; # vapi.youlai.tech替换成你的后端API地址
+ }
 }
 ```
-
-
 
 ## 注意事项
 
@@ -122,7 +116,7 @@ server {
 
 - **项目组件、函数和引用爆红**
 
-	重启 VSCode 尝试
+ 重启 VSCode 尝试
 
 - **其他问题**
 
@@ -139,10 +133,8 @@ server {
 - **本地接口**：默认使用线上接口，你可以通过以下步骤完成本地接口环境搭建：
 
   > 1. 获取基于 `Java 、SpringBoot` 开发的后端 [youlai-boot](https://gitee.com/youlaiorg/youlai-boot.git) 源码 ;
-  > 2. 根据后端工程说明文档 [README.md](https://gitee.com/youlaiorg/youlai-boot#%E9%A1%B9%E7%9B%AE%E8%BF%90%E8%A1%8C) 完成本地启动; 
+  > 2. 根据后端工程说明文档 [README.md](https://gitee.com/youlaiorg/youlai-boot#%E9%A1%B9%E7%9B%AE%E8%BF%90%E8%A1%8C) 完成本地启动;
   > 3. 替换 [vite.config.ts](vite.config.ts) 的代理目标地址 `vapi.youlai.tech` 为本地的 `localhost:8989`
-
-
 
 ## 项目文档
 
@@ -151,16 +143,11 @@ server {
 - [ESLint+Prettier+Stylelint+EditorConfig 约束和统一前端代码规范](https://blog.csdn.net/u013737132/article/details/130190788)
 - [Husky + Lint-staged + Commitlint + Commitizen + cz-git 配置 Git 提交规范](https://blog.csdn.net/u013737132/article/details/130191363)
 
-
-
-
 ## 提交规范
 
-执行 `pnpm run commit` 唤起 git commit 交互，根据提示完成信息的输入和选择。
+执行 `pnpm run commit` 唤起 git commit 交互，根据提示完成信息的输入和选择
 
 ![](https://foruda.gitee.com/images/1687755823165218215/c1705416_716974.png)
-
-
 
 ## 交流群🚀
 
@@ -170,8 +157,6 @@ server {
 >
 > 为了避免营销广告人群混入，此举无奈，望理解！
 
-
 | 公众号                                                       | 交流群                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <img src="https://foruda.gitee.com/images/1687689212187063809/3c69eaee_716974.png" height="180px"/> | <img src="https://foruda.gitee.com/images/1687689212139273561/6a65ef69_716974.png" height="180px"/> |
-
